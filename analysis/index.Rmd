@@ -27,4 +27,4 @@ editor_options:
 **링크**: [**과제 3**](homework-03.html)
 
 
-**템플릿**: [**과제 3 템플릿**]()
+**템플릿**: [**과제 3 템플릿**](https://raw.githubusercontent.com/zorba78/quiz-repository/master/templates/homework-03-template.Rmd)

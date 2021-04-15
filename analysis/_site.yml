@@ -1,7 +1,7 @@
-name: "2021년도 1학기 통계프로그래밍언어 과제"
+name: "2021년 1학기 통계프로그래밍언어 과제"
 output_dir: ../docs
 navbar:
-  title: "Quiz Assets"
+  title: "2021년 1학기 통계프로그래밍언어 과제"
   left:
   - text: Home
     href: index.html
@@ -13,7 +13,5 @@ navbar:
          icon: fa-book-open
 output:
   workflowr::wflow_html:
-    toc: no
-    toc_float: no
     theme: cosmo
     highlight: textmate
