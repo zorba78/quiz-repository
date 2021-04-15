@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "통계프로그래밍언어 과제"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -8,4 +8,23 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+# 과제 제출 유의사항
+
+**과제 제출 방식**
+  
+   - R Markdown 문서(`Rmd`) 파일과 해당 문서를 컴파일 후 생성된 `html` 파일 모두 제출할 것
+   - 모든 문제에 대해 작성한 R 코드 및 결과가 `html` 문서에 포함되어야 함. 
+   - 모든 코드(스크립트)에는 라인 별 의미에 대한 주석을 달 것. 
+   - 최종 파일명은 `학번-성명.Rmd`, `학번-성명.html` 로 저장
+   - 압축파일은 `*.zip` 형태로 생성할 것
+
+
+
+## Homework 3: 배열, 테이블, 데이터프레임 관련 과제
+
+### 제출기간: 2021년 4월 16일 ~ 2021년 4월 30일(자정 전 까지)
+
+**링크**: [**과제 3**](homework-03.html)
+
+
+**템플릿**: [**과제 3 템플릿**]()

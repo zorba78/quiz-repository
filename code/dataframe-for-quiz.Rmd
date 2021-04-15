@@ -1,0 +1,25 @@
+---
+title: "Untitled"
+author: "Boncho Ku"
+date: '2021 4 15 '
+output: 
+   html_document: 
+      df_print: paged
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dataframe
+
+```{r}
+dat <- head(mtcars, 8)
+dat[4, 6] <- NA
+dat[5, 3] <- NA
+dat
+
+```
+
