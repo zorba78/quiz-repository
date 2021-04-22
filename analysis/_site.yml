@@ -8,6 +8,9 @@ navbar:
   - text: 과제
     icon: fa-list-alt
     menu:
+       - text: "Homework 2 Solutions"
+         href: homework-02.html
+         icon: fa-book-open
        - text: "Homework 3"
          href: homework-03.html
          icon: fa-book-open
