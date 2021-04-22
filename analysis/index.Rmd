@@ -19,12 +19,19 @@ editor_options:
    - 압축파일은 `*.zip` 형태로 생성할 것
 
 
+## Homework 2: 백터, 행렬 관련 과제
+
+**링크**: [**과제 2**](homework-02.html)
+
 
 ## Homework 3: 배열, 테이블, 데이터프레임 관련 과제
 
 ### 제출기간: 2021년 4월 16일 ~ 2021년 4월 30일(자정 전 까지)
 
+
 **링크**: [**과제 3**](homework-03.html)
 
 
 **템플릿**: [**과제 3 템플릿**](https://raw.githubusercontent.com/zorba78/quiz-repository/master/templates/homework-03-template.Rmd)
+
+
