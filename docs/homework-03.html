@@ -322,7 +322,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-04-23
+<strong>Last updated:</strong> 2021-05-06
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -413,16 +413,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytreed6b5f2c69498e2076856cf8cbcdb66214870e107targetblankd6b5f2ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zorba78/quiz-repository/tree/d6b5f2c69498e2076856cf8cbcdb66214870e107" target="_blank">d6b5f2c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree0689766012c88b0032355a2066986bd95983c9bdtargetblank0689766a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zorba78/quiz-repository/tree/0689766012c88b0032355a2066986bd95983c9bd" target="_blank">0689766</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytreed6b5f2c69498e2076856cf8cbcdb66214870e107targetblankd6b5f2ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree0689766012c88b0032355a2066986bd95983c9bdtargetblank0689766a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/zorba78/quiz-repository/tree/d6b5f2c69498e2076856cf8cbcdb66214870e107" target="_blank">d6b5f2c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/zorba78/quiz-repository/tree/0689766012c88b0032355a2066986bd95983c9bd" target="_blank">0689766</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -431,13 +431,6 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Untracked files:
-    Untracked:  analysis/homework-02.Rmd
-
-Unstaged changes:
-    Modified:   analysis/_site.yml
-    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -476,6 +469,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/zorba78/quiz-repository/blob/0689766012c88b0032355a2066986bd95983c9bd/analysis/homework-03.Rmd" target="_blank">0689766</a>
+</td>
+<td>
+zorba78
+</td>
+<td>
+2021-05-06
+</td>
+<td>
+wflow_publish(“analysis/homework-03.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/zorba78/quiz-repository/9a0f7a0d8f4b1e2b3a3870c04073ca70bc5bc9bc/docs/homework-03.html" target="_blank">9a0f7a0</a>
+</td>
+<td>
+zorba78
+</td>
+<td>
+2021-04-23
+</td>
+<td>
+add HW2 solutions
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -647,10 +674,11 @@ Homework 3
 </ul></li>
 </ol>
 <pre class="r"><code>require(tidyverse)
-require(jpeg)
-require(cowplot)
-
-myurl &lt;- paste0(&quot;https://img.livescore.co.kr/data/editor/1906/&quot;, 
+require(jpeg)</code></pre>
+<pre><code>필요한 패키지를 로딩중입니다: jpeg</code></pre>
+<pre class="r"><code>require(cowplot)</code></pre>
+<pre><code>필요한 패키지를 로딩중입니다: cowplot</code></pre>
+<pre class="r"><code>myurl &lt;- paste0(&quot;https://img.livescore.co.kr/data/editor/1906/&quot;, 
                 &quot;ba517de8162d92f4ea0e9de0ec98ba02.jpg&quot;)
 z &lt;- tempfile()
 download.file(myurl,z,mode=&quot;wb&quot;)
@@ -673,6 +701,38 @@ wb &lt;- t * yb + (1 - t)*matrix(runif(length(yb)), nrow = nl, ncol = pl)
 pic[300:460, 440:520, 1] &lt;- wr
 pic[300:460, 440:520, 2] &lt;- wg
 pic[300:460, 440:520, 3] &lt;- wb</code></pre>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>tmp &lt;- lapply(1:3, function(i) {
+  # browser()
+  x &lt;- pic[, , i]
+  wx &lt;- x[300:460, 440:520]
+  wx &lt;- t * wx + (1 - t)*matrix(runif(length(wx)), nrow = nl, ncol = pl)
+  x[300:460, 440:520] &lt;- wx
+  return(x)
+})
+
+res &lt;- array(unlist(tmp), dim = dim_pic)
+ggdraw() + 
+  draw_image(res)</code></pre>
+<p><img src="figure/homework-03.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>res &lt;- pic
+y &lt;- unlist(lapply(pic[300:460, 440:520, ], function(x) return(x)))
+u &lt;- t * y + (1 - t)*runif(length(y))
+res[300:460, 440:520, ] &lt;- array(u, dim = c(nl, pl, 3))
+
+ggdraw() + 
+  draw_image(res)</code></pre>
+<p><img src="figure/homework-03.Rmd/unnamed-chunk-2-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>res &lt;- pic
+z &lt;- c(pic[300:460, 440:520, ])
+w &lt;- t * z + (1 - t)*runif(length(z))
+res[300:460, 440:520, ] &lt;- array(w, dim = c(nl, pl, 3))
+
+ggdraw() + 
+  draw_image(res)</code></pre>
+<p><img src="figure/homework-03.Rmd/unnamed-chunk-2-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>R에 내장된 <code>mtcars</code> 데이터셋은 다음과 같이 11개의 변수로 구성되어 있다. </strong></li>
@@ -781,11 +841,117 @@ Number of carburetors, 기화기 갯수
 </table>
 <p><br></p>
 <ol style="list-style-type: lower-alpha">
-<li><p><code>mtcars</code>의 데이터 구조를 파악하고 자료의 전반적인 형태에 대해 기술 하시오.</p></li>
-<li><p>위 코드북을 참고해 엔진과 변속기어에 해당하는 변수를 factor로 변환 후 해당 데이터 프레임을 <code>df</code> 객체에 저장 하시오.</p></li>
-<li><p><code>df</code> 데이터셋에서 변속기어 (<code>am</code>)에 따른 <code>mpg</code>, <code>disp</code>, <code>hp</code>, <code>drat</code>, <code>wt</code>, <code>qsec</code>에 대한 평균과 표준편차를 구하시오 (Hint: <code>mean()</code>, <code>sd()</code> 함수 사용). 단 각 결과는 테이블 형태로 반환되어야 함(한 객체에 모든 변수의 평균 또는 표준편차가 저장되어야 한다는 의미로 테이블 객체의 반환을 의미하는 것은 아님).</p></li>
-<li><p><code>df</code> 데이터셋을 엔진형태(<code>vs</code>) 별로 나눈 후, 연비를 종속변수(<span class="math inline">\(y\)</span>)로 놓고 무게(<code>wt</code>)를 독립변수로 사용한 일변량 회귀식을 반환 하시오.</p></li>
+<li><code>mtcars</code>의 데이터 구조를 파악하고 자료의 전반적인 형태에 대해 기술 하시오.</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>df &lt;- mtcars
+head(df); dim(df); str(df); summary(df)</code></pre>
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<pre><code>[1] 32 11</code></pre>
+<pre><code>&#39;data.frame&#39;:   32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+<pre><code>      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec             vs        
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+ Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+ Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+ Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+       am              gear            carb      
+ Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+ 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+ Median :0.0000   Median :4.000   Median :2.000  
+ Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :1.0000   Max.   :5.000   Max.   :8.000  </code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>위 코드북을 참고해 엔진과 변속기어에 해당하는 변수를 factor로 변환 후 해당 데이터 프레임을 <code>df</code> 객체에 저장 하시오.</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>df &lt;- within(df, {
+  vs &lt;- factor(vs, levels = 0:1, 
+               labels = c(&quot;V-shaped&quot;, &quot;straight&quot;))
+  am &lt;- factor(am, levels = 0:1, 
+               labels = c(&quot;automatic&quot;, &quot;manual&quot;))
+})
+summary(df)</code></pre>
+<pre><code>      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec              vs             am    
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   V-shaped:18   automatic:19  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   straight:14   manual   :13  
+ Median :3.695   Median :3.325   Median :17.71                               
+ Mean   :3.597   Mean   :3.217   Mean   :17.85                               
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90                               
+ Max.   :4.930   Max.   :5.424   Max.   :22.90                               
+      gear            carb      
+ Min.   :3.000   Min.   :1.000  
+ 1st Qu.:3.000   1st Qu.:2.000  
+ Median :4.000   Median :2.000  
+ Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :5.000   Max.   :8.000  </code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><code>df</code> 데이터셋에서 변속기어 (<code>am</code>)에 따른 <code>mpg</code>, <code>disp</code>, <code>hp</code>, <code>drat</code>, <code>wt</code>, <code>qsec</code>에 대한 평균과 표준편차를 구하시오 (Hint: <code>mean()</code>, <code>sd()</code> 함수 사용). 단 각 결과는 테이블 형태로 반환되어야 함(한 객체에 모든 변수의 평균 또는 표준편차가 저장되어야 한다는 의미로 테이블 객체의 반환을 의미하는 것은 아님).</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>aggregate(cbind(mpg, disp, hp, drat, wt, qsec) ~ am, 
+          data = df, 
+          mean)</code></pre>
+<pre><code>         am      mpg     disp       hp     drat       wt     qsec
+1 automatic 17.14737 290.3789 160.2632 3.286316 3.768895 18.18316
+2    manual 24.39231 143.5308 126.8462 4.050000 2.411000 17.36000</code></pre>
+<pre class="r"><code>aggregate(cbind(mpg, disp, hp, drat, wt, qsec) ~ am, 
+          data = df, 
+          sd)</code></pre>
+<pre><code>         am      mpg      disp       hp      drat        wt     qsec
+1 automatic 3.833966 110.17165 53.90820 0.3923039 0.7774001 1.751308
+2    manual 6.166504  87.20399 84.06232 0.3640513 0.6169816 1.792359</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><code>df</code> 데이터셋을 엔진형태(<code>vs</code>) 별로 나눈 후, 연비를 종속변수(<span class="math inline">\(y\)</span>)로 놓고 무게(<code>wt</code>)를 독립변수로 사용한 일변량 회귀식을 반환 하시오.</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>dfl &lt;- split(df, df$vs)
+sapply(dfl, function(x) coef(lm(mpg ~ wt, data = x)))</code></pre>
+<pre><code>            V-shaped  straight
+(Intercept) 29.53144 41.298140
+wt          -3.50131 -6.411017</code></pre>
 <p><br><br></p>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>1912년 4월 14일 타이타닉호 침몰 사고의 생존자 정보를 담고 있는 <code>titanic</code> 데이터셋은 통계학적으로 범주형 데이터 분석의 예시로서 널리 사용되고 있으며, 기계학습 및 데이터 과학 커뮤니티인 <a href="https://kaggle.com">Kaggle</a>에서도 기계학습 알고리즘 경연을 위한 힉습자료로 활용되고 있다. 해당 데이터는 <a href="https://raw.githubusercontent.com/jbryer/CompStats/master/Data/titanic3.csv" class="uri">https://raw.githubusercontent.com/jbryer/CompStats/master/Data/titanic3.csv</a> 에서 다운로드가 가능하다. 타이타닉 데이터의 주요 변수에 대한 설명(코드북)은 아래와 같다.</strong></li>
@@ -929,16 +1095,227 @@ Port of embarkation (C=Cherbourg; Q=Queenstown; S=Southhampton
 </tbody>
 </table>
 <ol style="list-style-type: lower-alpha">
-<li><p>위 코드북의 내용을 <code>codebook_tit</code> 이란 데이터 프레임 객체에 저장 후 출력하시오.</p></li>
-<li><p>위 URL 주소로부터 타이타닉 데이터 파일을 읽은 후 <code>titanic</code> 객체에 저장한 뒤, 위 코드북에서 제시한 변수(변수명)만 추출 후 <code>df_titanic</code> 객체에 저장하시오. 그리고 <code>df_titanic</code> 특성에 대해 기술하시오.</p></li>
-<li><p><code>age</code> 변수에 포함된 결측값을 <code>age</code>의 전체 평균값으로 대체 하시오.</p></li>
-<li><p><code>df_titanic</code>에서 <code>age</code> 를 다음과 같이 그룹화 후 <code>age_group</code> 변수(factor)를 생성 하시오.</p></li>
+<li>위 코드북의 내용을 <code>codebook_tit</code> 이란 데이터 프레임 객체에 저장 후 출력하시오.</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>`변수명` &lt;- c(&quot;pclass&quot;, &quot;survived&quot;, &quot;name&quot;, &quot;sex&quot;, &quot;age&quot;, &quot;sibsp&quot;, 
+              &quot;parch&quot;, &quot;ticket&quot;, &quot;fare&quot;, &quot;cabin&quot;, &quot;embarked&quot;)
+`변수설명(영문)` &lt;- c(&quot;Passenger Class (1=1st; 2=2nd; 3=3rd)&quot;, &quot;Survival (0=No; 1=Yes)&quot;, 
+                      &quot;Passenger name&quot;, &quot;Sex&quot;, &quot;Age&quot;, &quot;# of siblings/spouses abroad&quot;, 
+                      &quot;# of parents/children abroad&quot;, &quot;Ticket number&quot;, &quot;Passenger fare&quot;, 
+                      &quot;Cabin&quot;, &quot;Port of embarkation (C=Cherbourg; Q=Queenstown; S=Southhampton&quot;)
+`변수설명(국문)` &lt;- c(&quot;선실 등급&quot;, &quot;생존여부&quot;, &quot;탐승객 성명&quot;, &quot;성별&quot;, &quot;나이&quot;, 
+                      &quot;동승한 형제/배우자 수&quot;, &quot;동승한 부모/자녀 수&quot;, &quot;티켓번호&quot;, &quot;티켓요금&quot;, 
+                      &quot;선실번호&quot;, &quot;탑승 장소&quot;)
+desc_titanic &lt;- data.frame(`변수명`, 
+                           `변수설명(영문)`, 
+                           `변수설명(국문)`, 
+                           check.names = FALSE, 
+                           stringsAsFactors = FALSE)
+desc_titanic</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>위 URL 주소로부터 타이타닉 데이터 파일을 읽은 후 <code>titanic</code> 객체에 저장한 뒤, 위 코드북에서 제시한 변수(변수명)만 추출 후 <code>df_titanic</code> 객체에 저장하시오. 그리고 <code>df_titanic</code> 특성에 대해 기술하시오.</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>titanic &lt;- read.csv(&quot;https://raw.githubusercontent.com/jbryer/CompStats/master/Data/titanic3.csv&quot;)
+df_titanic &lt;- titanic[, `변수명`]
+head(df_titanic); dim(df_titanic); str(df_titanic); summary(df_titanic)</code></pre>
+<pre><code>  pclass survived                                            name    sex   age
+1      1        1                   Allen, Miss. Elisabeth Walton female 29.00
+2      1        1                  Allison, Master. Hudson Trevor   male  0.92
+3      1        0                    Allison, Miss. Helen Loraine female  2.00
+4      1        0            Allison, Mr. Hudson Joshua Creighton   male 30.00
+5      1        0 Allison, Mrs. Hudson J C (Bessie Waldo Daniels) female 25.00
+6      1        1                             Anderson, Mr. Harry   male 48.00
+  sibsp parch ticket     fare   cabin embarked
+1     0     0  24160 211.3375      B5        S
+2     1     2 113781 151.5500 C22 C26        S
+3     1     2 113781 151.5500 C22 C26        S
+4     1     2 113781 151.5500 C22 C26        S
+5     1     2 113781 151.5500 C22 C26        S
+6     0     0  19952  26.5500     E12        S</code></pre>
+<pre><code>[1] 1309   11</code></pre>
+<pre><code>&#39;data.frame&#39;:   1309 obs. of  11 variables:
+ $ pclass  : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ survived: int  1 1 0 0 0 1 1 0 1 0 ...
+ $ name    : chr  &quot;Allen, Miss. Elisabeth Walton&quot; &quot;Allison, Master. Hudson Trevor&quot; &quot;Allison, Miss. Helen Loraine&quot; &quot;Allison, Mr. Hudson Joshua Creighton&quot; ...
+ $ sex     : chr  &quot;female&quot; &quot;male&quot; &quot;female&quot; &quot;male&quot; ...
+ $ age     : num  29 0.92 2 30 25 48 63 39 53 71 ...
+ $ sibsp   : int  0 1 1 1 1 0 1 0 2 0 ...
+ $ parch   : int  0 2 2 2 2 0 0 0 0 0 ...
+ $ ticket  : chr  &quot;24160&quot; &quot;113781&quot; &quot;113781&quot; &quot;113781&quot; ...
+ $ fare    : num  211 152 152 152 152 ...
+ $ cabin   : chr  &quot;B5&quot; &quot;C22 C26&quot; &quot;C22 C26&quot; &quot;C22 C26&quot; ...
+ $ embarked: chr  &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; ...</code></pre>
+<pre><code>     pclass         survived         name               sex           
+ Min.   :1.000   Min.   :0.000   Length:1309        Length:1309       
+ 1st Qu.:2.000   1st Qu.:0.000   Class :character   Class :character  
+ Median :3.000   Median :0.000   Mode  :character   Mode  :character  
+ Mean   :2.295   Mean   :0.382                                        
+ 3rd Qu.:3.000   3rd Qu.:1.000                                        
+ Max.   :3.000   Max.   :1.000                                        
+                                                                      
+      age            sibsp            parch          ticket         
+ Min.   : 0.17   Min.   :0.0000   Min.   :0.000   Length:1309       
+ 1st Qu.:21.00   1st Qu.:0.0000   1st Qu.:0.000   Class :character  
+ Median :28.00   Median :0.0000   Median :0.000   Mode  :character  
+ Mean   :29.88   Mean   :0.4989   Mean   :0.385                     
+ 3rd Qu.:39.00   3rd Qu.:1.0000   3rd Qu.:0.000                     
+ Max.   :80.00   Max.   :8.0000   Max.   :9.000                     
+ NA&#39;s   :263                                                        
+      fare            cabin             embarked        
+ Min.   :  0.000   Length:1309        Length:1309       
+ 1st Qu.:  7.896   Class :character   Class :character  
+ Median : 14.454   Mode  :character   Mode  :character  
+ Mean   : 33.295                                        
+ 3rd Qu.: 31.275                                        
+ Max.   :512.329                                        
+ NA&#39;s   :1                                              </code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><code>age</code> 변수에 포함된 결측값을 <code>age</code>의 전체 평균값으로 대체 하시오.</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>sum(is.na(df_titanic))</code></pre>
+<pre><code>[1] 264</code></pre>
+<pre class="r"><code>df_titanic$age[is.na(df_titanic$age)] &lt;- mean(df_titanic$age, na.rm = TRUE)
+summary(df_titanic)</code></pre>
+<pre><code>     pclass         survived         name               sex           
+ Min.   :1.000   Min.   :0.000   Length:1309        Length:1309       
+ 1st Qu.:2.000   1st Qu.:0.000   Class :character   Class :character  
+ Median :3.000   Median :0.000   Mode  :character   Mode  :character  
+ Mean   :2.295   Mean   :0.382                                        
+ 3rd Qu.:3.000   3rd Qu.:1.000                                        
+ Max.   :3.000   Max.   :1.000                                        
+                                                                      
+      age            sibsp            parch          ticket         
+ Min.   : 0.17   Min.   :0.0000   Min.   :0.000   Length:1309       
+ 1st Qu.:22.00   1st Qu.:0.0000   1st Qu.:0.000   Class :character  
+ Median :29.88   Median :0.0000   Median :0.000   Mode  :character  
+ Mean   :29.88   Mean   :0.4989   Mean   :0.385                     
+ 3rd Qu.:35.00   3rd Qu.:1.0000   3rd Qu.:0.000                     
+ Max.   :80.00   Max.   :8.0000   Max.   :9.000                     
+                                                                    
+      fare            cabin             embarked        
+ Min.   :  0.000   Length:1309        Length:1309       
+ 1st Qu.:  7.896   Class :character   Class :character  
+ Median : 14.454   Mode  :character   Mode  :character  
+ Mean   : 33.295                                        
+ 3rd Qu.: 31.275                                        
+ Max.   :512.329                                        
+ NA&#39;s   :1                                              </code></pre>
+<pre class="r"><code># df_titanic$age</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><code>df_titanic</code>에서 <code>age</code> 를 다음과 같이 그룹화 후 <code>age_group</code> 변수(factor)를 생성 하시오.</li>
+</ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
 <pre class="r"><code># 0 살 이상 15살 미만: Children
-# 15살 이상: Adult</code></pre>
+# 15살 이상: Adult
+
+df_titanic$age_group &lt;- factor(ifelse(df_titanic$age &lt; 15, &quot;Children&quot;, &quot;Adult&quot;), 
+                               levels = c(&quot;Children&quot;, &quot;Adult&quot;))</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>선실 등급에 따른 남녀 별, 연령 집단 별 생존 빈도 및 비율에 대한 테이블을 생성하시오.</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code># 1. 등급 * 성별 * 생존여부
+# 2. 등급 * 연령집단 * 생존여부
+
+tab1 &lt;- with(df_titanic, table(sex, survived, pclass))
+ptab1 &lt;- prop.table(tab1, margin = c(1,3))
+tab1; ptab1</code></pre>
+<pre><code>, , pclass = 1
+
+        survived
+sex        0   1
+  female   5 139
+  male   118  61
+
+, , pclass = 2
+
+        survived
+sex        0   1
+  female  12  94
+  male   146  25
+
+, , pclass = 3
+
+        survived
+sex        0   1
+  female 110 106
+  male   418  75</code></pre>
+<pre><code>, , pclass = 1
+
+        survived
+sex               0          1
+  female 0.03472222 0.96527778
+  male   0.65921788 0.34078212
+
+, , pclass = 2
+
+        survived
+sex               0          1
+  female 0.11320755 0.88679245
+  male   0.85380117 0.14619883
+
+, , pclass = 3
+
+        survived
+sex               0          1
+  female 0.50925926 0.49074074
+  male   0.84787018 0.15212982</code></pre>
+<pre class="r"><code>tab2 &lt;- with(df_titanic, table(age_group, survived, pclass))
+ptab2 &lt;- prop.table(tab2, margin = c(1,3))
+tab2; ptab2</code></pre>
+<pre><code>, , pclass = 1
+
+          survived
+age_group    0   1
+  Children   1   6
+  Adult    122 194
+
+, , pclass = 2
+
+          survived
+age_group    0   1
+  Children   1  26
+  Adult    157  93
+
+, , pclass = 3
+
+          survived
+age_group    0   1
+  Children  46  29
+  Adult    482 152</code></pre>
+<pre><code>, , pclass = 1
+
+          survived
+age_group           0          1
+  Children 0.14285714 0.85714286
+  Adult    0.38607595 0.61392405
+
+, , pclass = 2
+
+          survived
+age_group           0          1
+  Children 0.03703704 0.96296296
+  Adult    0.62800000 0.37200000
+
+, , pclass = 3
+
+          survived
+age_group           0          1
+  Children 0.61333333 0.38666667
+  Adult    0.76025237 0.23974763</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>아래와 같은 데이터셋이 주어졌을 때 </strong></li>
 </ol>
@@ -1075,14 +1452,62 @@ An Introduction to R
 <ol style="list-style-type: lower-alpha">
 <li>Dataset #1에 해당하는 데이터를 <code>authors</code>, dataset #2에 해당하는 데이터를 <code>books</code> 에 저장한 객체를 생성 하시오(단, 데이터 프레임을 구성하는 모든 변수는 문자열 변수로 저장).</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>authors &lt;- data.frame(surname = c(&quot;Tukey&quot;, &quot;Venables&quot;, &quot;Tierney&quot;, &quot;Ripley&quot;, &quot;McNeil&quot;), 
+    nationality = c(&quot;US&quot;, &quot;Australia&quot;, &quot;US&quot;, &quot;UK&quot;, &quot;Australia&quot;), stringsAsFactors = FALSE)
+books &lt;- data.frame(name = c(&quot;Tukey&quot;, &quot;Venables&quot;, &quot;Tierney&quot;, &quot;Ripley&quot;, &quot;Ripley&quot;, 
+    &quot;McNeil&quot;, &quot;R Core&quot;), title = c(&quot;Exploratory Data Analysis&quot;, &quot;Modern Applied Statistics ...&quot;, 
+    &quot;LISP-STAT&quot;, &quot;Spatial Statistics&quot;, &quot;Stochastic Simulation&quot;, &quot;Interactive Data Analysis&quot;, 
+    &quot;An Introduction to R&quot;), stringsAsFactors = FALSE)
+authors</code></pre>
+<pre><code>   surname nationality
+1    Tukey          US
+2 Venables   Australia
+3  Tierney          US
+4   Ripley          UK
+5   McNeil   Australia</code></pre>
+<pre class="r"><code>books</code></pre>
+<pre><code>      name                         title
+1    Tukey     Exploratory Data Analysis
+2 Venables Modern Applied Statistics ...
+3  Tierney                     LISP-STAT
+4   Ripley            Spatial Statistics
+5   Ripley         Stochastic Simulation
+6   McNeil     Interactive Data Analysis
+7   R Core          An Introduction to R</code></pre>
 <p><br/></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>두 데이터 셋을 <code>authors</code> 기준으로 병합한 데이터셋을 생성하시오.</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>merge(authors, books, by.x = &quot;surname&quot;, by.y = &quot;name&quot;)</code></pre>
+<pre><code>   surname nationality                         title
+1   McNeil   Australia     Interactive Data Analysis
+2   Ripley          UK            Spatial Statistics
+3   Ripley          UK         Stochastic Simulation
+4  Tierney          US                     LISP-STAT
+5    Tukey          US     Exploratory Data Analysis
+6 Venables   Australia Modern Applied Statistics ...</code></pre>
 <p><br/></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>두 데이터 셋의 모든 값들을 포함한 결합 데이터 셋을 생성 하시오.</li>
 </ol>
+<blockquote>
+<p>해답</p>
+</blockquote>
+<pre class="r"><code>merge(authors, books, by.x = &quot;surname&quot;, by.y = &quot;name&quot;, all = TRUE)</code></pre>
+<pre><code>   surname nationality                         title
+1   McNeil   Australia     Interactive Data Analysis
+2   R Core        &lt;NA&gt;          An Introduction to R
+3   Ripley          UK            Spatial Statistics
+4   Ripley          UK         Stochastic Simulation
+5  Tierney          US                     LISP-STAT
+6    Tukey          US     Exploratory Data Analysis
+7 Venables   Australia Modern Applied Statistics ...</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1111,27 +1536,29 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] kableExtra_1.3.4 forcats_0.5.1    stringr_1.4.0    dplyr_1.0.4     
- [5] purrr_0.3.4      readr_1.4.0      tidyr_1.1.3      tibble_3.1.0    
- [9] ggplot2_3.3.3    tidyverse_1.3.0  workflowr_1.6.2 
+ [1] cowplot_1.1.1    jpeg_0.1-8.1     kableExtra_1.3.4 forcats_0.5.1   
+ [5] stringr_1.4.0    dplyr_1.0.5      purrr_0.3.4      readr_1.4.0     
+ [9] tidyr_1.1.3      tibble_3.1.1     ggplot2_3.3.3    tidyverse_1.3.1 
+[13] workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.6        svglite_2.0.0     lubridate_1.7.10  assertthat_0.2.1 
- [5] rprojroot_2.0.2   digest_0.6.27     utf8_1.1.4        R6_2.5.0         
- [9] cellranger_1.1.0  backports_1.2.1   reprex_1.0.0      evaluate_0.14    
-[13] highr_0.8         httr_1.4.2        pillar_1.5.0      rlang_0.4.10     
-[17] readxl_1.3.1      rstudioapi_0.13   whisker_0.4       jquerylib_0.1.3  
-[21] rmarkdown_2.7     webshot_0.5.2     munsell_0.5.0     broom_0.7.5      
-[25] compiler_4.0.5    httpuv_1.5.5      modelr_0.1.8      xfun_0.21        
-[29] pkgconfig_2.0.3   systemfonts_1.0.1 htmltools_0.5.1.1 tidyselect_1.1.0 
-[33] viridisLite_0.3.0 fansi_0.4.2       crayon_1.4.1      dbplyr_2.1.0     
-[37] withr_2.4.1       later_1.1.0.1     grid_4.0.5        jsonlite_1.7.2   
-[41] gtable_0.3.0      lifecycle_1.0.0   DBI_1.1.1         git2r_0.28.0     
-[45] magrittr_2.0.1    scales_1.1.1      cli_2.3.1         stringi_1.5.3    
-[49] fs_1.5.0          promises_1.2.0.1  xml2_1.3.2        bslib_0.2.4      
-[53] ellipsis_0.3.1    generics_0.1.0    vctrs_0.3.6       tools_4.0.5      
-[57] glue_1.4.2        hms_1.0.0         yaml_2.2.1        colorspace_2.0-0 
-[61] rvest_0.3.6       knitr_1.31        haven_2.3.1       sass_0.3.1       </code></pre>
+ [5] rprojroot_2.0.2   digest_0.6.27     utf8_1.2.1        R6_2.5.0         
+ [9] cellranger_1.1.0  backports_1.2.1   reprex_2.0.0      evaluate_0.14    
+[13] highr_0.9         httr_1.4.2        pillar_1.6.0      rlang_0.4.10     
+[17] readxl_1.3.1      rstudioapi_0.13   whisker_0.4       jquerylib_0.1.4  
+[21] magick_2.7.1      rmarkdown_2.7     webshot_0.5.2     munsell_0.5.0    
+[25] broom_0.7.6       compiler_4.0.5    httpuv_1.6.0      modelr_0.1.8     
+[29] xfun_0.22         pkgconfig_2.0.3   systemfonts_1.0.1 htmltools_0.5.1.1
+[33] tidyselect_1.1.0  viridisLite_0.4.0 fansi_0.4.2       crayon_1.4.1     
+[37] dbplyr_2.1.1      withr_2.4.2       later_1.2.0       grid_4.0.5       
+[41] jsonlite_1.7.2    gtable_0.3.0      lifecycle_1.0.0   DBI_1.1.1        
+[45] git2r_0.28.0      magrittr_2.0.1    scales_1.1.1      cli_2.5.0        
+[49] stringi_1.5.3     fs_1.5.0          promises_1.2.0.1  xml2_1.3.2       
+[53] bslib_0.2.4       ellipsis_0.3.1    generics_0.1.0    vctrs_0.3.7      
+[57] tools_4.0.5       glue_1.4.2        hms_1.0.0         yaml_2.2.1       
+[61] colorspace_2.0-0  rvest_1.0.0       knitr_1.33        haven_2.4.1      
+[65] sass_0.3.1       </code></pre>
 </div>
 </div>
 
