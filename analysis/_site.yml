@@ -14,6 +14,9 @@ navbar:
        - text: "Homework 3 Solutions"
          href: homework-03.html
          icon: fa-book-open
+       - text: "Homework 4"
+         href: homework-04.html
+         icon: fa-book-open
 output:
   workflowr::wflow_html:
     theme: cosmo

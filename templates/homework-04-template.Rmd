@@ -1,0 +1,126 @@
+---
+title: "Homework 4"
+# author: "zorba78"
+date: "2021-05-07"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r setting, include=FALSE}
+knitr::opts_chunk$set(eval    = FALSE, 
+                     echo    = FALSE, 
+                     message = FALSE, 
+                     warning = FALSE, 
+                     error   = TRUE)
+```
+
+
+
+## Homework 4
+
+
+1. 자료실에 업로드된 `exercise.zip` 파일을 다운로드 후 `exercise` 폴더에 압축을 
+풀면 총 20개의 텍스트 파일이 저장되어 있다. 해당 파일들은 
+휴면상태 뇌파(resting state EEG) 신호로부터 추출한 특징(feature)이다. 
+폴더에 포함된 텍스트 파일의 이름은 `기기명` (`h7n1`), 
+`EEG 변수 특징` (`beam_results`), `파일번호` (예: `009`)로 
+구성되어 있고 `_`로 연결되어 있다. 
+
+
+a. 저장된 텍스트 파일 중 하나를 열어보고 해당 텍스트 파일이 저장하고 있는 
+데이터의 구조에 대해 설명하고, 열과 열을 구분하기 위해 어떤 구분자(separator)가 
+사용되었는지 기술하시오. 
+
+
+
+b. 다운로드한 텍스트 파일이 저장된 폴더 경로를 `path` 라는 객체에 저장하고,  
+`dir()` 함수를 이용해 해당 폴더에 저장되어 있는 파일의 이름 모두를 `filename` 
+이라는 객체에 저장 후 R 콘솔에서 확인하시오. 
+
+
+
+c. `filename` 에서 `기기명` 부분만 추출 후, `file_dev` 객체에 저장 하시오. 
+
+
+
+d. 정규표현식을 응용하여 `filename` 에서 기기명에 해당하는 부분을 삭제 후 
+`file_id` 객체에 저장 하시오(hint: `gsub()` 함수를 사용하고, 
+`file_id`에 저장되어 있는 문자열은 `beam_results_009.txt`와 같은 형태로 
+반환되어야 함). 
+
+
+
+e. 정규표현식을 사용하여 위에서 생성한 `file_id`에서 숫자부분만 추출 후 
+`id_tmp` 라는 객체에 저장 후, "ID" 문자와 해당 객체를 구성하는 각 원소를 결합해 
+모든 원소가 `ID009`와 같은 형태의 원소값을 갖는 `ID` 객체를 생성하시오. 
+
+
+
+f. `paste()` 또는 `paste0()` 함수를 활용해 1-a. 에서 생성한 `path`라는 객체와 
+`filename`을 이용해 `파일경로/파일명` 형태의 문자형 벡터를 `full_filename` 
+객체에 저장하시오. 
+
+
+
+g. 1-f.에서 만든 `full_filename`, `lapply()`와 `read.table()` 함수를 활용하여 
+폴더에 저장되어 있는 모든 텍스트 파일을 리스트 형태로 저장한 `datl` 객체를 
+생성 하시오.
+
+
+
+
+h. 1-g.에서 생성한 `datl`에 저장되어 있는 20개의 데이터 프레임을 하나의 
+데이터 프레임으로 묶은 결과를 저장한 `dat` 객체를 생성 하시오. 
+
+
+
+
+i. 1-c. 와 1-d. 에서 생성한 `ID`와 `file_dev` 두 변수로 구성된  `id_info` 라는 
+데이터 프레임을 생성 하시오. 단 두 문자형 벡터의 각 원소는 3 번씩 반복하고,  
+두 변수 `ID`와 `file_dev`는 모두 문자형으로 저장되어야 함. 
+
+
+
+j. 1-i. 에서 생성한 데이터 프레임 `id_info` 와 1.h 에서 생성한 `dat` 을 하나의 
+데이터 프레임으로 묶은 `dat_fin` 이라는 객체를 생성 하시오. 
+
+
+
+k. 자료실에 업로드된 `beam-crf-ex.xlsx`를 다운로드 한 후 
+R 작업공간에 읽어온 결과를 `beam_crf` 객체에 저장하시오. 
+
+
+
+l. `beam_crf` 데이터 프레임 내에 존재하는 변수 `eeg_filenam`의 문자열 중 처음 
+5개 문자(예: `ID158`)만 추출한 `eeg_id`라는 변수를 `beam_crf` 데이터 프레임 
+내에 새로운 변수로 만드시오. 
+
+
+
+
+m. 두 데이터 프레임 `beam_crf`와 `dat_fin`은 연결할 수 있는가? 
+연결할 수 있다면 그 이유를 설명 하시오. 
+
+
+
+n. 만약 연결할 수 있다면 `beam_crf`와 `dat_fin`을 병합해 두 데이터 프레임에 
+공통으로 포함된 행으로만 구성된 데이터 프레임 `beam_sub` 객체를 생성 하시오. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
