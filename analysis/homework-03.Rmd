@@ -23,7 +23,7 @@ require(kableExtra)
    - 그림은 2.5절 예제와 동일한 그림을 사용
    - **Hint**: `*apply()` 계열 함수, 코드블록(`{}`), `return()`, `unlist()`, `array()` 함수 사용)
 
-```{r eval=FALSE}
+```{r eval=TRUE}
 require(tidyverse)
 require(jpeg)
 require(cowplot)
@@ -53,6 +53,42 @@ pic[300:460, 440:520, 2] <- wg
 pic[300:460, 440:520, 3] <- wb
 
 ```
+
+
+> 해답
+
+```{r}
+tmp <- lapply(1:3, function(i) {
+  # browser()
+  x <- pic[, , i]
+  wx <- x[300:460, 440:520]
+  wx <- t * wx + (1 - t)*matrix(runif(length(wx)), nrow = nl, ncol = pl)
+  x[300:460, 440:520] <- wx
+  return(x)
+})
+
+res <- array(unlist(tmp), dim = dim_pic)
+ggdraw() + 
+  draw_image(res)
+
+res <- pic
+y <- unlist(lapply(pic[300:460, 440:520, ], function(x) return(x)))
+u <- t * y + (1 - t)*runif(length(y))
+res[300:460, 440:520, ] <- array(u, dim = c(nl, pl, 3))
+
+ggdraw() + 
+  draw_image(res)
+
+res <- pic
+z <- c(pic[300:460, 440:520, ])
+w <- t * z + (1 - t)*runif(length(z))
+res[300:460, 440:520, ] <- array(w, dim = c(nl, pl, 3))
+
+ggdraw() + 
+  draw_image(res)
+
+```
+
 
 
 <br/>
@@ -87,14 +123,63 @@ kable(dsc_mtcars) %>%
 a) `mtcars`의 데이터 구조를 파악하고 자료의 전반적인 형태에 대해 기술 하시오. 
 
 
+> 해답
+
+```{r}
+df <- mtcars
+head(df); dim(df); str(df); summary(df)
+
+```
+
+
+
 b) 위 코드북을 참고해 엔진과 변속기어에 해당하는 변수를 factor로 변환 후 해당 데이터 프레임을 `df` 객체에 저장 하시오. 
+
+
+> 해답
+
+```{r}
+df <- within(df, {
+  vs <- factor(vs, levels = 0:1, 
+               labels = c("V-shaped", "straight"))
+  am <- factor(am, levels = 0:1, 
+               labels = c("automatic", "manual"))
+})
+summary(df)
+  
+```
+
 
 
 c) `df` 데이터셋에서 변속기어 (`am`)에 따른 `mpg`, `disp`, `hp`, `drat`, `wt`, `qsec`에 대한 평균과 표준편차를 구하시오 (Hint: `mean()`, `sd()` 함수 사용). 
 단 각 결과는 테이블 형태로 반환되어야 함(한 객체에 모든 변수의 평균 또는 표준편차가 저장되어야 한다는 의미로 테이블 객체의 반환을 의미하는 것은 아님). 
 
 
+> 해답
+
+```{r}
+aggregate(cbind(mpg, disp, hp, drat, wt, qsec) ~ am, 
+          data = df, 
+          mean)
+aggregate(cbind(mpg, disp, hp, drat, wt, qsec) ~ am, 
+          data = df, 
+          sd)
+
+```
+
+
+
+
 d) `df` 데이터셋을 엔진형태(`vs`) 별로 나눈 후, 연비를 종속변수($y$)로 놓고 무게(`wt`)를 독립변수로 사용한 일변량 회귀식을 반환 하시오. 
+
+> 해답
+
+
+```{r}
+dfl <- split(df, df$vs)
+sapply(dfl, function(x) coef(lm(mpg ~ wt, data = x)))
+```
+
 
 
 <br><br>
@@ -126,24 +211,92 @@ kable(desc_titanic) %>%
 
 a) 위 코드북의 내용을  `codebook_tit` 이란 데이터 프레임 객체에 저장 후 출력하시오. 
 
+> 해답
+
+
+```{r, eval=FALSE}
+`변수명` <- c("pclass", "survived", "name", "sex", "age", "sibsp", 
+              "parch", "ticket", "fare", "cabin", "embarked")
+`변수설명(영문)` <- c("Passenger Class (1=1st; 2=2nd; 3=3rd)", "Survival (0=No; 1=Yes)", 
+                      "Passenger name", "Sex", "Age", "# of siblings/spouses abroad", 
+                      "# of parents/children abroad", "Ticket number", "Passenger fare", 
+                      "Cabin", "Port of embarkation (C=Cherbourg; Q=Queenstown; S=Southhampton")
+`변수설명(국문)` <- c("선실 등급", "생존여부", "탐승객 성명", "성별", "나이", 
+                      "동승한 형제/배우자 수", "동승한 부모/자녀 수", "티켓번호", "티켓요금", 
+                      "선실번호", "탑승 장소")
+desc_titanic <- data.frame(`변수명`, 
+                           `변수설명(영문)`, 
+                           `변수설명(국문)`, 
+                           check.names = FALSE, 
+                           stringsAsFactors = FALSE)
+desc_titanic
+```
+
+
+
 
 b)  위 URL 주소로부터 타이타닉 데이터 파일을 읽은 후 `titanic` 객체에 저장한 뒤, 위 코드북에서 제시한 변수(변수명)만 
 추출 후 `df_titanic` 객체에 저장하시오. 그리고 `df_titanic` 특성에 대해 기술하시오. 
 
 
+> 해답
+
+
+```{r}
+titanic <- read.csv("https://raw.githubusercontent.com/jbryer/CompStats/master/Data/titanic3.csv")
+df_titanic <- titanic[, `변수명`]
+head(df_titanic); dim(df_titanic); str(df_titanic); summary(df_titanic)
+```
+
+
+
 c) `age` 변수에 포함된 결측값을 `age`의 전체 평균값으로 대체 하시오.
+
+
+> 해답
+
+
+```{r}
+sum(is.na(df_titanic))
+df_titanic$age[is.na(df_titanic$age)] <- mean(df_titanic$age, na.rm = TRUE)
+summary(df_titanic)
+# df_titanic$age
+```
+
 
 
 d) `df_titanic`에서 `age` 를 다음과 같이 그룹화 후 `age_group` 변수(factor)를 생성 하시오. 
 
 
-```{r, eval=FALSE}
+> 해답
+
+```{r}
 # 0 살 이상 15살 미만: Children
 # 15살 이상: Adult
+
+df_titanic$age_group <- factor(ifelse(df_titanic$age < 15, "Children", "Adult"), 
+                               levels = c("Children", "Adult"))
+
 ```
 
 
 e) 선실 등급에 따른 남녀 별, 연령 집단 별 생존 빈도 및 비율에 대한 테이블을 생성하시오. 
+
+> 해답
+
+
+```{r}
+# 1. 등급 * 성별 * 생존여부
+# 2. 등급 * 연령집단 * 생존여부
+
+tab1 <- with(df_titanic, table(sex, survived, pclass))
+ptab1 <- prop.table(tab1, margin = c(1,3))
+tab1; ptab1
+
+tab2 <- with(df_titanic, table(age_group, survived, pclass))
+ptab2 <- prop.table(tab2, margin = c(1,3))
+tab2; ptab2
+```
 
 
 
@@ -181,6 +334,20 @@ kable(books) %>%
 
 a) Dataset #1에 해당하는 데이터를 `authors`, dataset #2에 해당하는 데이터를 `books` 에 저장한 객체를 생성 하시오(단, 데이터 프레임을 구성하는 모든 변수는 문자열 변수로 저장). 
 
+> 해답
+
+
+```{r}
+authors <- data.frame(surname = c("Tukey", "Venables", "Tierney", "Ripley", "McNeil"), 
+    nationality = c("US", "Australia", "US", "UK", "Australia"), stringsAsFactors = FALSE)
+books <- data.frame(name = c("Tukey", "Venables", "Tierney", "Ripley", "Ripley", 
+    "McNeil", "R Core"), title = c("Exploratory Data Analysis", "Modern Applied Statistics ...", 
+    "LISP-STAT", "Spatial Statistics", "Stochastic Simulation", "Interactive Data Analysis", 
+    "An Introduction to R"), stringsAsFactors = FALSE)
+authors
+books
+```
+
 
 <br/>
 
@@ -188,9 +355,29 @@ a) Dataset #1에 해당하는 데이터를 `authors`, dataset #2에 해당하는
 b) 두 데이터 셋을 `authors` 기준으로 병합한 데이터셋을 생성하시오. 
 
 
+> 해답
+
+
+```{r}
+merge(authors, books, by.x = "surname", by.y = "name")
+```
+
+
+
 <br/>
 
 
 
 c) 두 데이터 셋의 모든 값들을 포함한 결합 데이터 셋을 생성 하시오. 
+
+
+> 해답
+
+
+
+```{r}
+merge(authors, books, by.x = "surname", by.y = "name", all = TRUE)
+```
+
+
 
