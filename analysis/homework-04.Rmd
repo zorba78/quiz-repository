@@ -9,8 +9,8 @@ editor_options:
 
 
 ```{r setting, include=FALSE}
-knitr::opts_chunk$set(eval    = FALSE, 
-                     echo    = FALSE, 
+knitr::opts_chunk$set(eval    = TRUE, 
+                     echo    = TRUE, 
                      message = FALSE, 
                      warning = FALSE, 
                      error   = TRUE)
@@ -41,6 +41,7 @@ b. 다운로드한 텍스트 파일이 저장된 폴더 경로를 `path` 라는 
 ```{r}
 path <- "data/exercise"
 filename <- dir(path)
+head(filename)
 ```
 
 
@@ -48,6 +49,7 @@ c. `filename` 에서 `기기명` 부분만 추출 후, `file_dev` 객체에 저�
 
 ```{r}
 file_dev <- substring(filename, 1, 4)
+head(file_dev)
 ```
 
 
@@ -58,6 +60,7 @@ d. 정규표현식을 응용하여 `filename` 에서 기기명에 해당하는 �
 
 ```{r}
 file_id <- gsub("^h[0-9]n[0-9]_", "", filename)
+head(file_id)
 
 ```
 
@@ -70,6 +73,8 @@ e. 정규표현식을 사용하여 위에서 생성한 `file_id`에서 숫자부
 id_tmp <- gsub(".*?([0-9]+).*", "\\1", file_id)
 ID <- paste0("ID", id_tmp)
 # id <- gsub("[a-z[:punct:]]+([0-9]+)\\.[a-z]{3}", "\\1", file_id)
+head(ID)
+
 ```
 
 
@@ -79,6 +84,7 @@ f. `paste()` 또는 `paste0()` 함수를 활용해 1-a. 에서 생성한 `path`�
 
 ```{r}
 full_filename <- paste0(path, "/", filename)
+head(full_filename)
 ```
 
 
@@ -89,6 +95,7 @@ g. 1-f.에서 만든 `full_filename`, `lapply()`와 `read.table()` 함수를 활
 
 ```{r}
 datl <- lapply(full_filename, function(fn) read.table(fn, header = T))
+head(datl)
 ```
 
 
@@ -98,6 +105,7 @@ h. 1-g.에서 생성한 `datl`에 저장되어 있는 20개의 데이터 프레�
 
 ```{r}
 dat <- do.call(rbind, datl)
+head(dat)
 ```
 
 
@@ -109,6 +117,7 @@ i. 1-c. 와 1-d. 에서 생성한 `ID`와 `file_dev` 두 변수로 구성된  `i
 id_info <- data.frame(ID = rep(ID, each = 3), 
                       file_dev = rep(file_dev, each = 3), 
                       stringsAsFactors = FALSE)
+head(id_info)
 
 ```
 
@@ -118,6 +127,7 @@ j. 1-i. 에서 생성한 데이터 프레임 `id_info` 와 1.h 에서 생성한 
 
 ```{r}
 dat_fin <- cbind(id_info, dat)
+head(dat_fin)
 ```
 
 
@@ -126,6 +136,7 @@ R 작업공간에 읽어온 결과를 `beam_crf` 객체에 저장하시오.
 
 ```{r}
 beam_crf <- readxl::read_xlsx("data/beam-crf-ex.xlsx")
+head(beam_crf)
 ```
 
 
@@ -137,6 +148,7 @@ l. `beam_crf` 데이터 프레임 내에 존재하는 변수 `eeg_filenam`의 �
 ```{r}
 eeg_id <- substr(beam_crf$eeg_filenam, 1, 5)
 beam_crf$eeg_id <- eeg_id
+head(beam_crf)
 ```
 
 
