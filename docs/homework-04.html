@@ -14,7 +14,7 @@
 
 <title>Homework 4</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -327,7 +327,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-05-07
+<strong>Last updated:</strong> 2021-05-24
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -418,16 +418,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree857bc2bc736ddbbf27005e7fc96850ec7080d785targetblank857bc2ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zorba78/quiz-repository/tree/857bc2bc736ddbbf27005e7fc96850ec7080d785" target="_blank">857bc2b</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree77a0840bd29011dbac362d78f4bf23524a419a3dtargetblank77a0840a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zorba78/quiz-repository/tree/77a0840bd29011dbac362d78f4bf23524a419a3d" target="_blank">77a0840</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree857bc2bc736ddbbf27005e7fc96850ec7080d785targetblank857bc2ba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomzorba78quizrepositorytree77a0840bd29011dbac362d78f4bf23524a419a3dtargetblank77a0840a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/zorba78/quiz-repository/tree/857bc2bc736ddbbf27005e7fc96850ec7080d785" target="_blank">857bc2b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/zorba78/quiz-repository/tree/77a0840bd29011dbac362d78f4bf23524a419a3d" target="_blank">77a0840</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -474,6 +474,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/zorba78/quiz-repository/blob/77a0840bd29011dbac362d78f4bf23524a419a3d/analysis/homework-04.Rmd" target="_blank">77a0840</a>
+</td>
+<td>
+zorba78
+</td>
+<td>
+2021-05-24
+</td>
+<td>
+wflow_publish(“analysis/homework-04.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/zorba78/quiz-repository/074eab4ff8db1c87d2d7d8a5b1ef5c2c0a6fa366/docs/homework-04.html" target="_blank">074eab4</a>
+</td>
+<td>
+zorba78
+</td>
+<td>
+2021-05-07
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -524,20 +558,238 @@ wflow_publish(“analysis/homework-04.Rmd”)
 <li><p>저장된 텍스트 파일 중 하나를 열어보고 해당 텍스트 파일이 저장하고 있는 데이터의 구조에 대해 설명하고, 열과 열을 구분하기 위해 어떤 구분자(separator)가 사용되었는지 기술하시오.</p></li>
 <li><p>다운로드한 텍스트 파일이 저장된 폴더 경로를 <code>path</code> 라는 객체에 저장하고,<br />
 <code>dir()</code> 함수를 이용해 해당 폴더에 저장되어 있는 파일의 이름 모두를 <code>filename</code> 이라는 객체에 저장 후 R 콘솔에서 확인하시오.</p></li>
-<li><p><code>filename</code> 에서 <code>기기명</code> 부분만 추출 후, <code>file_dev</code> 객체에 저장 하시오.</p></li>
-<li><p>정규표현식을 응용하여 <code>filename</code> 에서 기기명에 해당하는 부분을 삭제 후 <code>file_id</code> 객체에 저장 하시오(hint: <code>gsub()</code> 함수를 사용하고, <code>file_id</code>에 저장되어 있는 문자열은 <code>beam_results_009.txt</code>와 같은 형태로 반환되어야 함).</p></li>
-<li><p>정규표현식을 사용하여 위에서 생성한 <code>file_id</code>에서 숫자부분만 추출 후 <code>id_tmp</code> 라는 객체에 저장 후, “ID” 문자와 해당 객체를 구성하는 각 원소를 결합해 모든 원소가 <code>ID009</code>와 같은 형태의 원소값을 갖는 <code>ID</code> 객체를 생성하시오.</p></li>
-<li><p><code>paste()</code> 또는 <code>paste0()</code> 함수를 활용해 1-a. 에서 생성한 <code>path</code>라는 객체와 <code>filename</code>을 이용해 <code>파일경로/파일명</code> 형태의 문자형 벡터를 <code>full_filename</code> 객체에 저장하시오.</p></li>
-<li><p>1-f.에서 만든 <code>full_filename</code>, <code>lapply()</code>와 <code>read.table()</code> 함수를 활용하여 폴더에 저장되어 있는 모든 텍스트 파일을 리스트 형태로 저장한 <code>datl</code> 객체를 생성 하시오.</p></li>
-<li><p>1-g.에서 생성한 <code>datl</code>에 저장되어 있는 20개의 데이터 프레임을 하나의 데이터 프레임으로 묶은 결과를 저장한 <code>dat</code> 객체를 생성 하시오.</p></li>
-<li><p>1-c. 와 1-d. 에서 생성한 <code>ID</code>와 <code>file_dev</code> 두 변수로 구성된 <code>id_info</code> 라는 데이터 프레임을 생성 하시오. 단 두 문자형 벡터의 각 원소는 3 번씩 반복하고,<br />
-두 변수 <code>ID</code>와 <code>file_dev</code>는 모두 문자형으로 저장되어야 함.</p></li>
-<li><p>1-i. 에서 생성한 데이터 프레임 <code>id_info</code> 와 1.h 에서 생성한 <code>dat</code> 을 하나의 데이터 프레임으로 묶은 <code>dat_fin</code> 이라는 객체를 생성 하시오.</p></li>
-<li><p>자료실에 업로드된 <code>beam-crf-ex.xlsx</code>를 다운로드 한 후 R 작업공간에 읽어온 결과를 <code>beam_crf</code> 객체에 저장하시오.</p></li>
-<li><p><code>beam_crf</code> 데이터 프레임 내에 존재하는 변수 <code>eeg_filenam</code>의 문자열 중 처음 5개 문자(예: <code>ID158</code>)만 추출한 <code>eeg_id</code>라는 변수를 <code>beam_crf</code> 데이터 프레임 내에 새로운 변수로 만드시오.</p></li>
+</ol>
+<pre class="r"><code>path &lt;- &quot;data/exercise&quot;
+filename &lt;- dir(path)
+head(filename)</code></pre>
+<pre><code>[1] &quot;h7n1_beam_results_009.txt&quot; &quot;h7n1_beam_results_141.txt&quot;
+[3] &quot;h7n1_beam_results_145.txt&quot; &quot;h7n1_beam_results_152.txt&quot;
+[5] &quot;h7n1_beam_results_159.txt&quot; &quot;h7n1_beam_results_168.txt&quot;</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><code>filename</code> 에서 <code>기기명</code> 부분만 추출 후, <code>file_dev</code> 객체에 저장 하시오.</li>
+</ol>
+<pre class="r"><code>file_dev &lt;- substring(filename, 1, 4)
+head(file_dev)</code></pre>
+<pre><code>[1] &quot;h7n1&quot; &quot;h7n1&quot; &quot;h7n1&quot; &quot;h7n1&quot; &quot;h7n1&quot; &quot;h7n1&quot;</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>정규표현식을 응용하여 <code>filename</code> 에서 기기명에 해당하는 부분을 삭제 후 <code>file_id</code> 객체에 저장 하시오(hint: <code>gsub()</code> 함수를 사용하고, <code>file_id</code>에 저장되어 있는 문자열은 <code>beam_results_009.txt</code>와 같은 형태로 반환되어야 함).</li>
+</ol>
+<pre class="r"><code>file_id &lt;- gsub(&quot;^h[0-9]n[0-9]_&quot;, &quot;&quot;, filename)
+head(file_id)</code></pre>
+<pre><code>[1] &quot;beam_results_009.txt&quot; &quot;beam_results_141.txt&quot; &quot;beam_results_145.txt&quot;
+[4] &quot;beam_results_152.txt&quot; &quot;beam_results_159.txt&quot; &quot;beam_results_168.txt&quot;</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>정규표현식을 사용하여 위에서 생성한 <code>file_id</code>에서 숫자부분만 추출 후 <code>id_tmp</code> 라는 객체에 저장 후, “ID” 문자와 해당 객체를 구성하는 각 원소를 결합해 모든 원소가 <code>ID009</code>와 같은 형태의 원소값을 갖는 <code>ID</code> 객체를 생성하시오.</li>
+</ol>
+<pre class="r"><code>id_tmp &lt;- gsub(&quot;.*?([0-9]+).*&quot;, &quot;\\1&quot;, file_id)
+ID &lt;- paste0(&quot;ID&quot;, id_tmp)
+# id &lt;- gsub(&quot;[a-z[:punct:]]+([0-9]+)\\.[a-z]{3}&quot;, &quot;\\1&quot;, file_id)
+head(ID)</code></pre>
+<pre><code>[1] &quot;ID009&quot; &quot;ID141&quot; &quot;ID145&quot; &quot;ID152&quot; &quot;ID159&quot; &quot;ID168&quot;</code></pre>
+<ol start="6" style="list-style-type: lower-alpha">
+<li><code>paste()</code> 또는 <code>paste0()</code> 함수를 활용해 1-a. 에서 생성한 <code>path</code>라는 객체와 <code>filename</code>을 이용해 <code>파일경로/파일명</code> 형태의 문자형 벡터를 <code>full_filename</code> 객체에 저장하시오.</li>
+</ol>
+<pre class="r"><code>full_filename &lt;- paste0(path, &quot;/&quot;, filename)
+head(full_filename)</code></pre>
+<pre><code>[1] &quot;data/exercise/h7n1_beam_results_009.txt&quot;
+[2] &quot;data/exercise/h7n1_beam_results_141.txt&quot;
+[3] &quot;data/exercise/h7n1_beam_results_145.txt&quot;
+[4] &quot;data/exercise/h7n1_beam_results_152.txt&quot;
+[5] &quot;data/exercise/h7n1_beam_results_159.txt&quot;
+[6] &quot;data/exercise/h7n1_beam_results_168.txt&quot;</code></pre>
+<ol start="7" style="list-style-type: lower-alpha">
+<li>1-f.에서 만든 <code>full_filename</code>, <code>lapply()</code>와 <code>read.table()</code> 함수를 활용하여 폴더에 저장되어 있는 모든 텍스트 파일을 리스트 형태로 저장한 <code>datl</code> 객체를 생성 하시오.</li>
+</ol>
+<pre class="r"><code>datl &lt;- lapply(full_filename, function(fn) read.table(fn, header = T))
+head(datl)</code></pre>
+<pre><code>[[1]]
+    Row     delta    theta    alpha   alphaL    alphaH     beta    gamma
+1 Total  9.983556 10.33946 11.02099 12.43222 10.080176 8.034892 6.883133
+2  Left 10.153756 10.38729 11.21914 12.66841 10.252966 8.078438 6.873408
+3 Right  9.813357 10.29164 10.82284 12.19603  9.907386 7.991347 6.892858
+       ATR      ABR       BTR   MDF   PF       PP     IAPF noiseNo_peakNo
+1 1.065850 1.371548 0.7771063 8.525 8.95 12.92780 10.14626              6
+2 1.080084 1.388777 0.7777237 8.550 9.40 13.23031 10.13894              1
+3 1.051615 1.354320 0.7764888 8.500 8.50 12.62529 10.15359              1
+
+[[2]]
+    Row     delta    theta    alpha   alphaL   alphaH     beta    gamma
+1 Total  8.808369 5.392179 5.632613 6.949404 4.754753 2.892158 2.291450
+2  Left 10.112375 6.875144 6.384186 7.621951 5.559010 3.385859 2.510898
+3 Right  7.504363 3.909213 4.881041 6.276857 3.950496 2.398456 2.072001
+        ATR      ABR       BTR  MDF   PF       PP     IAPF noiseNo_peakNo
+1 1.0885944 1.960310 0.5530088 8.75 9.95 11.55679 10.07748             15
+2 0.9285894 1.885544 0.4924783 8.40 9.95 11.75776 10.05714              1
+3 1.2485993 2.035076 0.6135394 9.10 9.95 11.35582 10.09783              1
+
+[[3]]
+    Row    delta    theta    alpha   alphaL   alphaH       beta     gamma
+1 Total 4.737946 2.747683 3.909121 5.779288 2.662344 -0.8095037 -7.095238
+2  Left 2.392689 2.042766 4.199847 6.147777 2.901227 -0.8121256 -6.986834
+3 Right 7.083202 3.452600 3.618395 5.410798 2.423460 -0.8068817 -7.203643
+       ATR       ABR        BTR   MDF    PF       PP     IAPF noiseNo_peakNo
+1 1.551991 -4.827922 -0.3156322 8.975 10.05 9.219990 9.988977              0
+2 2.055961 -5.171425 -0.3975618 9.300 10.05 9.369291 9.996782              1
+3 1.048020 -4.484419 -0.2337026 8.650 10.05 9.070688 9.981172              1
+
+[[4]]
+    Row    delta    theta    alpha   alphaL   alphaH       beta     gamma
+1 Total 3.826580 2.091346 3.163333 3.877516 2.687210 -0.7161751 -2.596612
+2  Left 4.695183 2.445472 3.499633 4.136692 3.074926 -0.4274065 -2.263570
+3 Right 2.957977 1.737219 2.827033 3.618340 2.299495 -1.0049437 -2.929655
+       ATR       ABR        BTR   MDF    PF       PP     IAPF noiseNo_peakNo
+1 1.529199 -5.500596 -0.3766266 9.375 9.825 7.181631 10.25536              0
+2 1.431066 -8.188066 -0.1747746 9.300 9.850 7.175219 10.27896              1
+3 1.627333 -2.813126 -0.5784785 9.450 9.800 7.188044 10.23175              1
+
+[[5]]
+    Row    delta    theta     alpha   alphaL   alphaH     beta    gamma
+1 Total 8.662669 12.06875 10.257416 12.70898 8.623039 6.766557 4.658887
+2  Left 9.244365 12.36165 10.610159 13.31850 8.804596 6.545961 4.289641
+3 Right 8.080974 11.77585  9.904674 12.09946 8.441482 6.987152 5.028133
+        ATR      ABR       BTR   MDF   PF       PP     IAPF noiseNo_peakNo
+1 0.8497064 1.519213 0.5614418 8.075 7.55 16.25433 9.091549              3
+2 0.8583123 1.620871 0.5295377 8.100 7.60 16.64351 9.041708              1
+3 0.8411006 1.417555 0.5933459 8.050 7.50 15.86515 9.141391              1
+
+[[6]]
+    Row    delta     theta       alpha     alphaL      alphaH      beta
+1 Total 5.117308 1.1959526 -0.28993285 -1.1536280  0.28586392 -2.524214
+2  Left 5.755552 1.7406189  0.04955554 -0.8206287  0.62967838 -2.371381
+3 Right 4.479064 0.6512862 -0.62942125 -1.4866273 -0.05795054 -2.677047
+      gamma         ATR         ABR       BTR  MDF     PF       PP     IAPF
+1 -5.529639 -0.46897896  0.10711019 -2.736389 4.35 11.075 4.366998 10.41230
+2 -5.384844  0.02847007 -0.02089734 -1.362378 4.75 11.050 4.756340 10.39896
+3 -5.674434 -0.96642799  0.23511772 -4.110401 3.95 11.100 3.977657 10.42563
+  noiseNo_peakNo
+1              0
+2              1
+3              1</code></pre>
+<ol start="8" style="list-style-type: lower-alpha">
+<li>1-g.에서 생성한 <code>datl</code>에 저장되어 있는 20개의 데이터 프레임을 하나의 데이터 프레임으로 묶은 결과를 저장한 <code>dat</code> 객체를 생성 하시오.</li>
+</ol>
+<pre class="r"><code>dat &lt;- do.call(rbind, datl)
+head(dat)</code></pre>
+<pre><code>    Row     delta     theta     alpha    alphaL    alphaH     beta    gamma
+1 Total  9.983556 10.339465 11.020995 12.432223 10.080176 8.034892 6.883133
+2  Left 10.153756 10.387286 11.219145 12.668413 10.252966 8.078438 6.873408
+3 Right  9.813357 10.291644 10.822845 12.196033  9.907386 7.991347 6.892858
+4 Total  8.808369  5.392179  5.632613  6.949404  4.754753 2.892158 2.291450
+5  Left 10.112375  6.875144  6.384186  7.621951  5.559010 3.385859 2.510898
+6 Right  7.504363  3.909213  4.881041  6.276857  3.950496 2.398456 2.072001
+        ATR      ABR       BTR   MDF   PF       PP     IAPF noiseNo_peakNo
+1 1.0658496 1.371548 0.7771063 8.525 8.95 12.92780 10.14626              6
+2 1.0800844 1.388777 0.7777237 8.550 9.40 13.23031 10.13894              1
+3 1.0516147 1.354320 0.7764888 8.500 8.50 12.62529 10.15359              1
+4 1.0885944 1.960310 0.5530088 8.750 9.95 11.55679 10.07748             15
+5 0.9285894 1.885544 0.4924783 8.400 9.95 11.75776 10.05714              1
+6 1.2485993 2.035076 0.6135394 9.100 9.95 11.35582 10.09783              1</code></pre>
+<ol style="list-style-type: lower-roman">
+<li>1-c. 와 1-d. 에서 생성한 <code>ID</code>와 <code>file_dev</code> 두 변수로 구성된 <code>id_info</code> 라는 데이터 프레임을 생성 하시오. 단 두 문자형 벡터의 각 원소는 3 번씩 반복하고,<br />
+두 변수 <code>ID</code>와 <code>file_dev</code>는 모두 문자형으로 저장되어야 함.</li>
+</ol>
+<pre class="r"><code>id_info &lt;- data.frame(ID = rep(ID, each = 3), 
+                      file_dev = rep(file_dev, each = 3), 
+                      stringsAsFactors = FALSE)
+head(id_info)</code></pre>
+<pre><code>     ID file_dev
+1 ID009     h7n1
+2 ID009     h7n1
+3 ID009     h7n1
+4 ID141     h7n1
+5 ID141     h7n1
+6 ID141     h7n1</code></pre>
+<ol start="10" style="list-style-type: lower-alpha">
+<li>1-i. 에서 생성한 데이터 프레임 <code>id_info</code> 와 1.h 에서 생성한 <code>dat</code> 을 하나의 데이터 프레임으로 묶은 <code>dat_fin</code> 이라는 객체를 생성 하시오.</li>
+</ol>
+<pre class="r"><code>dat_fin &lt;- cbind(id_info, dat)
+head(dat_fin)</code></pre>
+<pre><code>     ID file_dev   Row     delta     theta     alpha    alphaL    alphaH
+1 ID009     h7n1 Total  9.983556 10.339465 11.020995 12.432223 10.080176
+2 ID009     h7n1  Left 10.153756 10.387286 11.219145 12.668413 10.252966
+3 ID009     h7n1 Right  9.813357 10.291644 10.822845 12.196033  9.907386
+4 ID141     h7n1 Total  8.808369  5.392179  5.632613  6.949404  4.754753
+5 ID141     h7n1  Left 10.112375  6.875144  6.384186  7.621951  5.559010
+6 ID141     h7n1 Right  7.504363  3.909213  4.881041  6.276857  3.950496
+      beta    gamma       ATR      ABR       BTR   MDF   PF       PP     IAPF
+1 8.034892 6.883133 1.0658496 1.371548 0.7771063 8.525 8.95 12.92780 10.14626
+2 8.078438 6.873408 1.0800844 1.388777 0.7777237 8.550 9.40 13.23031 10.13894
+3 7.991347 6.892858 1.0516147 1.354320 0.7764888 8.500 8.50 12.62529 10.15359
+4 2.892158 2.291450 1.0885944 1.960310 0.5530088 8.750 9.95 11.55679 10.07748
+5 3.385859 2.510898 0.9285894 1.885544 0.4924783 8.400 9.95 11.75776 10.05714
+6 2.398456 2.072001 1.2485993 2.035076 0.6135394 9.100 9.95 11.35582 10.09783
+  noiseNo_peakNo
+1              6
+2              1
+3              1
+4             15
+5              1
+6              1</code></pre>
+<ol start="11" style="list-style-type: lower-alpha">
+<li>자료실에 업로드된 <code>beam-crf-ex.xlsx</code>를 다운로드 한 후 R 작업공간에 읽어온 결과를 <code>beam_crf</code> 객체에 저장하시오.</li>
+</ol>
+<pre class="r"><code>beam_crf &lt;- readxl::read_xlsx(&quot;data/beam-crf-ex.xlsx&quot;)
+head(beam_crf)</code></pre>
+<pre><code># A tibble: 6 x 11
+  usubjid   eegdvid eeg_filenam   sex     age literacy height weight   bmi sysbp
+  &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 DC01-UR0… h7n1    ID158-2018Y-… Fema…  75.2 Unable      146     59  27.7   143
+2 DC01-UR0… h7n1    ID159-2018Y-… Fema…  79.9 Unable      147     44  20.4   129
+3 DC01-UR0… h7n1    ID160-2018Y-… Fema…  82.5 Read        146     47  22.0   123
+4 DC01-UR0… h7n3    ID162-2018Y-… Fema…  77.4 Unable      146     38  17.8   110
+5 DC01-UR0… h7n3    ID163-2018Y-… Fema…  75.9 Read        146     51  23.9   120
+6 DC01-UR0… h7n3    ID164-2018Y-… Fema…  63.9 Read/wr…    154     58  24.5   140
+# … with 1 more variable: diabp &lt;dbl&gt;</code></pre>
+<ol start="12" style="list-style-type: lower-alpha">
+<li><code>beam_crf</code> 데이터 프레임 내에 존재하는 변수 <code>eeg_filenam</code>의 문자열 중 처음 5개 문자(예: <code>ID158</code>)만 추출한 <code>eeg_id</code>라는 변수를 <code>beam_crf</code> 데이터 프레임 내에 새로운 변수로 만드시오.</li>
+</ol>
+<pre class="r"><code>eeg_id &lt;- substr(beam_crf$eeg_filenam, 1, 5)
+beam_crf$eeg_id &lt;- eeg_id
+head(beam_crf)</code></pre>
+<pre><code># A tibble: 6 x 12
+  usubjid   eegdvid eeg_filenam   sex     age literacy height weight   bmi sysbp
+  &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 DC01-UR0… h7n1    ID158-2018Y-… Fema…  75.2 Unable      146     59  27.7   143
+2 DC01-UR0… h7n1    ID159-2018Y-… Fema…  79.9 Unable      147     44  20.4   129
+3 DC01-UR0… h7n1    ID160-2018Y-… Fema…  82.5 Read        146     47  22.0   123
+4 DC01-UR0… h7n3    ID162-2018Y-… Fema…  77.4 Unable      146     38  17.8   110
+5 DC01-UR0… h7n3    ID163-2018Y-… Fema…  75.9 Read        146     51  23.9   120
+6 DC01-UR0… h7n3    ID164-2018Y-… Fema…  63.9 Read/wr…    154     58  24.5   140
+# … with 2 more variables: diabp &lt;dbl&gt;, eeg_id &lt;chr&gt;</code></pre>
+<ol start="13" style="list-style-type: lower-alpha">
 <li><p>두 데이터 프레임 <code>beam_crf</code>와 <code>dat_fin</code>은 연결할 수 있는가? 연결할 수 있다면 그 이유를 설명 하시오.</p></li>
 <li><p>만약 연결할 수 있다면 <code>beam_crf</code>와 <code>dat_fin</code>을 병합해 두 데이터 프레임에 공통으로 포함된 행으로만 구성된 데이터 프레임 <code>beam_sub</code> 객체를 생성 하시오.</p></li>
 </ol>
+<pre class="r"><code>beam_sub &lt;- merge(beam_crf, dat_fin, by.x = &quot;eeg_id&quot;, by.y = &quot;ID&quot;)
+head(beam_sub)</code></pre>
+<pre><code>  eeg_id            usubjid eegdvid                             eeg_filenam
+1  ID009 DC01-UR00085-A0005    h7n1             ID009-2018Y-03M_14D_14h_23m
+2  ID009 DC01-UR00085-A0005    h7n1             ID009-2018Y-03M_14D_14h_23m
+3  ID009 DC01-UR00085-A0005    h7n1             ID009-2018Y-03M_14D_14h_23m
+4  ID141 DC01-UR00085-A0009    h7n1 ID141-2018Y-06M_20D_15h_06m_(L143_R124)
+5  ID141 DC01-UR00085-A0009    h7n1 ID141-2018Y-06M_20D_15h_06m_(L143_R124)
+6  ID141 DC01-UR00085-A0009    h7n1 ID141-2018Y-06M_20D_15h_06m_(L143_R124)
+     sex      age   literacy height weight      bmi sysbp diabp file_dev   Row
+1 Female 75.77881     Unable    148     48 21.91381   124    71     h7n1 Total
+2 Female 75.77881     Unable    148     48 21.91381   124    71     h7n1  Left
+3 Female 75.77881     Unable    148     48 21.91381   124    71     h7n1 Right
+4   Male 65.83356 Read/write    166     70 25.40282   127    65     h7n1  Left
+5   Male 65.83356 Read/write    166     70 25.40282   127    65     h7n1 Right
+6   Male 65.83356 Read/write    166     70 25.40282   127    65     h7n1 Total
+      delta     theta     alpha    alphaL    alphaH     beta    gamma       ATR
+1  9.983556 10.339465 11.020995 12.432223 10.080176 8.034892 6.883133 1.0658496
+2 10.153756 10.387286 11.219145 12.668413 10.252966 8.078438 6.873408 1.0800844
+3  9.813357 10.291644 10.822845 12.196033  9.907386 7.991347 6.892858 1.0516147
+4 10.112375  6.875144  6.384186  7.621951  5.559010 3.385859 2.510898 0.9285894
+5  7.504363  3.909213  4.881041  6.276857  3.950496 2.398456 2.072001 1.2485993
+6  8.808369  5.392179  5.632613  6.949404  4.754753 2.892158 2.291450 1.0885944
+       ABR       BTR   MDF   PF       PP     IAPF noiseNo_peakNo
+1 1.371548 0.7771063 8.525 8.95 12.92780 10.14626              6
+2 1.388777 0.7777237 8.550 9.40 13.23031 10.13894              1
+3 1.354320 0.7764888 8.500 8.50 12.62529 10.15359              1
+4 1.885544 0.4924783 8.400 9.95 11.75776 10.05714              1
+5 2.035076 0.6135394 9.100 9.95 11.35582 10.09783              1
+6 1.960310 0.5530088 8.750 9.95 11.55679 10.07748             15</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -545,7 +797,40 @@ wflow_publish(“analysis/homework-04.Rmd”)
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.5 (2021-03-31)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 18.04.5 LTS
 
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3
+LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.2.20.so
+
+locale:
+ [1] LC_CTYPE=ko_KR.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=ko_KR.UTF-8        LC_COLLATE=ko_KR.UTF-8    
+ [5] LC_MONETARY=ko_KR.UTF-8    LC_MESSAGES=ko_KR.UTF-8   
+ [7] LC_PAPER=ko_KR.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=ko_KR.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.6        pillar_1.6.1      compiler_4.0.5    bslib_0.2.5      
+ [5] cellranger_1.1.0  later_1.2.0       jquerylib_0.1.4   git2r_0.28.0     
+ [9] tools_4.0.5       digest_0.6.27     jsonlite_1.7.2    evaluate_0.14    
+[13] lifecycle_1.0.0   tibble_3.1.2      pkgconfig_2.0.3   rlang_0.4.11     
+[17] cli_2.5.0         rstudioapi_0.13   yaml_2.2.1        xfun_0.23        
+[21] stringr_1.4.0     knitr_1.33        fs_1.5.0          vctrs_0.3.8      
+[25] sass_0.4.0        rprojroot_2.0.2   glue_1.4.2        R6_2.5.0         
+[29] fansi_0.4.2       readxl_1.3.1      rmarkdown_2.8     magrittr_2.0.1   
+[33] whisker_0.4       promises_1.2.0.1  ellipsis_0.3.2    htmltools_0.5.1.1
+[37] httpuv_1.6.1      utf8_1.2.1        stringi_1.6.2     crayon_1.4.1     </code></pre>
 </div>
 </div>
 
